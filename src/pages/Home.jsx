@@ -14,13 +14,13 @@ function Home() {
         dispatch(getCourseCategoryActions())
     },[])
 
-   
+   console.log(category);
     return(
         <>
             <Banner />
             {
                 category.map((cat,index) =>(
-                    <Courses key={index} courseName={cat.name} />
+                    <Courses key={index} catId={cat.id} courseName={cat.name} />
                 ))
             }
         </>

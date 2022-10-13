@@ -1,11 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from "@reduxjs/toolkit";
 import { CourseCategoryReducer } from "./reducers/CourseCategoryReducers";
 import { courseReducer } from "./reducers/CourseReducers";
+import { coursesContentReducer } from "./reducers/CoursesContentReducers";
 const {default: thunk} = require("redux-thunk")
 
 const reducers = combineReducers({
     courses: courseReducer,
-    category: CourseCategoryReducer
+    category: CourseCategoryReducer,
+    courses_content: coursesContentReducer
 })
 const initialState = {
 }
