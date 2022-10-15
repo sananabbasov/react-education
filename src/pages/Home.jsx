@@ -14,7 +14,6 @@ function Home() {
         dispatch(getCourseCategoryActions())
     },[])
 
-   console.log(category);
     return(
         <>
             <Banner />

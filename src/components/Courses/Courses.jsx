@@ -15,7 +15,6 @@ function Courses({ catId, courseName }) {
         dispatch(getCoursesContentsAction())
     }, [])
 
-    console.log(catId)
 
     return (
         <div>
@@ -26,9 +25,9 @@ function Courses({ catId, courseName }) {
             >
                 {
                     courses_content&&
-                    courses_content.filter(x=>x.id == catId).map((course, index) => (
+                    courses_content.filter(x=>x.categoryId == catId).map((course, index) => (
                         <SwiperSlide key={index}>
-                            <CourseCard contentName={course.courseName} coursePhoto={course.photoUrl} courseAuhtor={course.authorName} />
+                            <CourseCard courseId={course.courseId} contentName={course.courseName} coursePhoto={course.photoUrl} courseAuhtor={course.authorName} />
                         </SwiperSlide>
                     ))
                 }

@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -26,7 +27,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CourseCard({contentName,coursePhoto,courseAuhtor}) {
+export default function CourseCard({ courseId, contentName, coursePhoto, courseAuhtor }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -57,7 +58,10 @@ export default function CourseCard({contentName,coursePhoto,courseAuhtor}) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {contentName}
+          <Link to={`detail/${courseId}`}>
+            <h2>{contentName}</h2>
+          </Link>
+
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

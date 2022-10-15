@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.course_feature{
+  background-color: #6f84ae;
+  color:#fff
+}
+li{
+  list-style: none;
+}
