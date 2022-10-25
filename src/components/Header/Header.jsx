@@ -1,9 +1,26 @@
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { GetByEmailAction } from '../../redux/actions/AuthActions'
 import '../Header/header.scss'
-import Login from '../Login/Login'
 
 
 function Header() {
+
+    const [isAuth, setAuth] = useState(false)
+    const { user } = useSelector((state) => state.user)
+    const dispatch = useDispatch()
+  
+    useEffect(() => {
+        dispatch(GetByEmailAction())
+    }, [dispatch])
+    console.log("Header", user);
+
+
+    // if (user != null) {
+    //     setAuth(true)
+    // }
+
     return (
         <div className="header">
             <div className="header__container">
@@ -15,7 +32,7 @@ function Header() {
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>  
+                        <li>
                             <Link to="/about">About</Link>
                         </li>
                         <li>Courses</li>
@@ -23,7 +40,11 @@ function Header() {
                     </ul>
                 </div>
                 <div className="header__container__auth">
-                    <Login />
+                    {
+                        user == undefined ?
+                            <Link to="/auth">Login</Link>
+                            : <p>Sanan</p>
+                    }
                 </div>
             </div>
         </div>

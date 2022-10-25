@@ -3,20 +3,21 @@ import React, { useState } from 'react'
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCoursesByIdAction } from '../redux/actions/CourseActions';
+import { useParams } from 'react-router-dom';
 function CourseDetail() {
     const [expanded, setExpanded] = useState('panel0');
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
 
+    const {id} = useParams()
     const { courses } = useSelector((state) => state.courses)
     const dispatch = useDispatch()
 
     useState(() => {
-        dispatch(getCoursesByIdAction("634a6fa55b570144a2ccc2ae"))
+        dispatch(getCoursesByIdAction(id))
     }, [])
 
-    console.log(courses)
     return (
         <>
             <Grid width="60%" margin="auto" container spacing={4}>

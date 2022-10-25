@@ -16,7 +16,7 @@ function Home() {
 
     return(
         <>
-            <Banner />
+            <Banner coverPhoto={"https://comparassetsource.s3.amazonaws.com/media/blog/article/pexels-thisisengineering-3861951.jpg"} title={"Education Courses"} subTitle={"Learn From Home"} searchInput={true} />
             {
                 category.map((cat,index) =>(
                     <Courses key={index} catId={cat.id} courseName={cat.name} />
