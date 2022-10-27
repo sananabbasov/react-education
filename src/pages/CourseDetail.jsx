@@ -4,6 +4,7 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCoursesByIdAction } from '../redux/actions/CourseActions';
 import { useParams } from 'react-router-dom';
+import Header from '../components/Header/Header';
 function CourseDetail() {
     const [expanded, setExpanded] = useState('panel0');
     const handleChange = (panel) => (event, newExpanded) => {
@@ -20,6 +21,7 @@ function CourseDetail() {
 
     return (
         <>
+          <Header />
             <Grid width="60%" margin="auto" container spacing={4}>
                 <Grid item lg={8}>
                     <h1>{courses.name}</h1>

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Register from '../components/Register/Register';
 import Banner from '../components/Banner/Banner';
 import Login from '../components/Login/Login';
+import Header from '../components/Header/Header';
 
 
 function TabPanel(props) {
@@ -46,10 +47,11 @@ function Auth() {
     const [title, setTitle] = useState("Login")
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        title == "Login" ? setTitle("Register") : setTitle("Login") 
+        title == "Login" ? setTitle("Register") : setTitle("Login")
     };
     return (
         <div>
+            <Header />
             <Banner coverPhoto={"https://comparassetsource.s3.amazonaws.com/media/blog/article/coding-bootcamp.jpg"} title={title} searchInput={false} bannerHeight={"400px"} />
             <Box sx={{ width: '40%', margin: 'auto' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>

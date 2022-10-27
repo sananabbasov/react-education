@@ -12,7 +12,9 @@ const reducers = combineReducers({
     user: AuthReducers
 })
 
+const initialState = {
 
+}
 
 
 const middleware = [thunk]
